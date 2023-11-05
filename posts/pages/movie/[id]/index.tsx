@@ -1,10 +1,11 @@
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
-import TagButton from "@/components/Blog/TagButton";
-import { Request } from "express";
-import { getSingleMovie } from "@/utils/movies";
-import { moviesCardType } from "@/components/moviesCard";
-import Head from "next/head";
+import * as React from 'react';
+import RelatedPost from '../../../../components/Blog/RelatedPost';
+import SharePost from '../../../../components/Blog/SharePost';
+import TagButton from '../../../../components/Blog/TagButton';
+import { Request } from 'express';
+import { getSingleMovie } from '../../../../utils/movies';
+import { moviesCardType } from '../../../../components/moviesCard';
+import Head from 'next/head';
 
 export type moviesDetails = {
   budget: number;
@@ -30,7 +31,7 @@ const BlogSidebarPage = ({
   details: moviesDetails;
   related: moviesCardType[];
 }) => {
-  const date = details.release_date.split("-");
+  const date = details.release_date.split('-');
   const spoken_languages = JSON.parse(
     details.spoken_languages.replace(/'/g, '"')
   );
@@ -146,7 +147,7 @@ const BlogSidebarPage = ({
                     ✅ Download {details.original_title} ({date[2]}) Movie Dual
                     Audio (Hindi-English) 720p & 480p & 1080p. This is a Hindi
                     movie and available in 720p & 480p qualities. This is one of
-                    the best movie based on{" "}
+                    the best movie based on{' '}
                     {genres.map((g: any) => `${g.name} `)}. This part of this
                     Movie is now dubbed in Hindi. Click on the Download links
                     below to proceed
@@ -199,11 +200,11 @@ const BlogSidebarPage = ({
                       {details.vote_count})
                     </li>
                     <li className="mb-2 text-base font-medium text-graymain sm:text-lg lg:text-base xl:text-lg">
-                      <strong>Spoken Languages: </strong>{" "}
+                      <strong>Spoken Languages: </strong>{' '}
                       {spoken_languages.map((l: any) => `${l.name}, `)}
                     </li>
                     <li className="mb-2 text-base font-medium text-graymain sm:text-lg lg:text-base xl:text-lg">
-                      <strong>Production Companies: </strong>{" "}
+                      <strong>Production Companies: </strong>{' '}
                       {production_companies.map((c: any) => `${c.name}, `)}
                     </li>
                   </ul>
@@ -360,7 +361,7 @@ const BlogSidebarPage = ({
                     />
                     <mask
                       id="mask0_111:596"
-                      style={{ maskType: "alpha" }}
+                      style={{ maskType: 'alpha' }}
                       maskUnits="userSpaceOnUse"
                       x="0"
                       y="0"

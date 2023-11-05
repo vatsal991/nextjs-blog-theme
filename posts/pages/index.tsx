@@ -1,9 +1,10 @@
-import { getMoviesList } from "../utils/movies";
-import MoviesCard, { moviesCardType } from "@/components/moviesCard";
-import { Pagination } from "@/components/pagination";
-import { Request } from "express";
-import Head from "next/head";
-import queryString from "query-string";
+import * as React from 'react';
+import { getMoviesList } from '../../utils/movies';
+import MoviesCard, { moviesCardType } from '../../components/moviesCard';
+import { Pagination } from '../../components/pagination';
+import { Request } from 'express';
+import Head from 'next/head';
+import queryString from 'query-string';
 
 export default function Home({
   count,

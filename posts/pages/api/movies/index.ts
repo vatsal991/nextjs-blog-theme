@@ -1,5 +1,5 @@
-import prisma from "../../../prisma";
-import { Request, Response } from "express";
+import prisma from '../../../../prisma';
+import { Request, Response } from 'express';
 
 export default async function handler(req: Request, res: Response) {
   const { page, search, category } = req.query;
@@ -34,6 +34,6 @@ export default async function handler(req: Request, res: Response) {
     return res.status(200).send({ count, data: newData });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "Something went wrong !" });
+    res.status(500).send({ message: 'Something went wrong !' });
   }
 }

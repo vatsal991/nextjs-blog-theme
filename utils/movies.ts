@@ -1,5 +1,5 @@
-import { moviesCardType } from "@/components/moviesCard";
-import { moviesDetails } from "@/pages/movie/[id]";
+import { moviesCardType } from '../components/moviesCard';
+import { moviesDetails } from '../pages/movie/[id]';
 
 type singleMovieType = {
   data: moviesDetails;
