@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model movies_metadata {
+  budget               Int?
+  genres               String?  @db.VarChar(231)
+  tmdb                 Int      @id
+  imdb_id              String?  @db.VarChar(9)
+  original_title       String?  @db.VarChar(72)
+  overview             String?  @db.VarChar(998)
+  production_companies String?  @db.VarChar(1122)
+  release_date         String?  @db.VarChar(10)
+  runtime              String?  @db.VarChar(3)
+  spoken_languages     String?  @db.VarChar(282)
+  tagline              String?  @db.VarChar(252)
+  vote_average         Decimal? @db.Decimal(3, 1)
+  vote_count           Int?
+  images               images   @relation(fields: [tmdb], references: [id], onUpdate: Restrict, map: "image_foreign")
+}
+
+model images {
+  id              Int              @id @unique(map: "id")
+  path            String?          @db.VarChar(32)
+  movies_metadata movies_metadata?
+}
